@@ -1,0 +1,9 @@
+<%= render "navbar", article: @article %>
+
+<div class="article">
+  <h2><%= @article.title %> <%= link_to '<i class="fa-solid fa-pencil"></i>'.html_safe, edit_article_path(@article) %>
+      <%= link_to '<i class="fa-solid fa-trash-can"></i>'.html_safe, article_path(@article),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></h2>
+  <p><%= @article.content %></p>
+  <%= link_to "Back to List", articles_path %>
+</div>
